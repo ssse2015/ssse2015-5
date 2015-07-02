@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Reef Life</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="Project Stuff CSS.css" type="text/css"/>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<link rel="stylesheet" href="themes/reef_life_theme.min.css" />
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			document.getElementById("hey").innerHTML= localStorage.getItem("oysterName") +":6 months";
+			
+			function check(name){
+				var prev = localStorage.getItem(name);
+				if(prev == "1"){
+					alert("You already own this item"); 
+				}
+				else{
+					if(confirm("Are you sure you want to purchase " + name +"?")){
+						alert("Congratulations! Purchase sucessful! Remember, all proceeds go towards the Billion Oyster Project.");
+						localStorage.setItem(name, "1");
+						document.getElementById(name).data-icon = "check";
+					}
+				}
+			}
+			function rebuyable(name){
+				if(confirm("Are you sure you want to purchase " + name +"?")){
+					alert("Congratulations! Purchase sucessful! Remember, all proceeds go towards the Billion Oyster Project.");
+				}
+			}
+			function startup(){
+				var name=localStorage.getItem("oysterName");
+				document.getElementById("oyster").innerHTML = name + ": 6 months"; 
+			}
+		</script>
+		
+		
+		
+</head>
+<body onload="startup()">
+<div data-role="page" data-theme="a">
+	
+	<div class="header" data-theme="a">
+			<h1><center>Profile</center></h1>
+			<center>
+				<table>
+					<tr>
+						<td><center><h2 id="oyster">Johnny: 6 months</h2></center></td>
+					</tr>
+					<tr>
+						<td><center><a href="//E:Reef Life Stuff//Reef Life//index.html"><img src="images/oysterplain2.png"/></a></center></td>
+						
+					</tr>
+					
+				</table>
+				<div padding-top=20px>
+				
+				<img src="images/oystersLocation.jpg"/>
+				
+				</div>
+				<table>
+					<tr>
+						<td colspan=3><center>Reef Buddies</center></td>
+					</tr>
+					<tr>
+						<td class:"outlines-stuff"><img src="images/glassoyster.png">
+							<center><p>Buffy</p></center></td>
+						<td class:"outlines-stuff"><img src="images/HAToyster.png">
+							<center><p>Spike</p></center></td>
+						<td class:"outlines-stuff"><img src="images/oyster.png">
+							<center><p>Willow</p></center></td>
+					</tr>
+				</table>
+				<center><div class="fixed_stuff" data-role="collapsible-set">
+					<div data-role="collapsible" data-collapsed="false">
+						<h3>Food</h3>
+						<table class="table">
+							<tr>
+								<td class="table">Reg Algae</td>
+								<td class="table"><a href="#" data-role="button" name="checkbox-0" onClick="rebuyable('Reg Algae')"/></center></td>
+								<td class="table">$0.25</td>
+							</tr>
+							<tr>
+								<td class="table">Reg Plankton</td>
+								<td class="table"><a href="#" data-role="button" onClick="rebuyable('Reg Plankton')"></a></td>
+								<td class="table">$0.25</td>
+							</tr>
+							<tr>
+								<td class="table">Golden Algae</td>
+								<td class="table"><a href="#" data-role="button" onClick="rebuyable('Golden Algae')"></a></td>
+								<td class="table">$0.50</td>
+							</tr>
+							<tr>
+								<td class="table">Golden Plankton</td>
+								<td class="table"><a href="#" data-role="button" onClick="rebuyable('Golden Plankton')"></a></td>
+								<td class="table">$0.50</td>
+							</tr>
+						</table>
+								
+					</div>
+					<div data-role="collapsible" data-collapsed="false">
+						<h3>Clothing</h3>
+							<table class="table">
+							<tr>
+								<td class="table">Sunglasses</td>
+								<td class = "table" id="Sunglasses"><a href="#" data-role="button" onClick="check('Sunglasses')"></a></td>
+								<td class="table">$1</td>
+							</tr>
+							<tr>
+								<td class="table">Top Hat</td>
+								<td class = "table" id="Top Hat"><a href="#" data-role="button" onClick="check('Top Hat')"></a></td>
+								<td class="table">$1</td>
+							</tr>
+							<tr>
+								<td class="table">Bow</td>
+								<td class = "table" id="Bow"><a href="#" data-role="button" onClick="check('Bow')"></a></td>
+								<td class="table">$1</td>
+							</tr>
+							<tr>
+								<td class="table">Tongue</td>
+								<td class = "table" id="Tongue"><a href="#" data-role="button" onClick="check('Tongue')"></a></td>
+								<td class="table">$1</td>
+							</tr>
+							<tr>
+								<td class="table">Mustache</td>
+								<td class = "table" id="Mustache"><a href="#" data-role="button" onClick="check('Mustache')"></a></td>
+								<td class="table">$1</td>
+							</tr>
+						</table>
+					</div>
+					<div data-role="collapsible" data-collapsed="false">
+						<h3>Decorations</h3>
+						<table class="table">
+							<tr>
+								<td class="table">Couch</td>
+								<td class = "table" id="Couch"><a href="#" data-role="button" onClick="check('Couch')"></a></td>
+								<td class="table">$1</td>
+							</tr>
+							<tr>
+								<td class="table">Chair</td>
+								<td class = "table" id="Chair"><a href="#" data-role="button" onClick="check('Chair')"></a></td>
+								<td class="table">$1</td>
+							</tr>
+							<tr>
+								<td class="table">Lamp</td>
+								<td class = "table" id="Lamp"><a href="#" data-role="button" onClick="check('Lamp')"></a></td>
+								<td class="table">$1</td>
+							</tr>
+							<tr>
+								<td class="table">Space Wallpaper</td>
+								<td class = "table" id="Space Wallpaper"><a href="#" data-role="button" onClick="check('Space Wallpaper')"></a></td>
+								<td class="table">$1</td>
+							</tr>
+							<tr>
+								<td class="table">Ship Wallpaper</td>
+								<td class = "table" id="Ship Wallpaper"><a href="#" data-role="button" onClick="check('Ship Wallpaper')"></a></td>
+								<td class="table">$1</td>
+							</tr>
+						</table>
+					</div>
+					
+					
+					
+				</div></center>
+			</center>
+	</div>
+	
+</div>
+</body>
+
+</html>

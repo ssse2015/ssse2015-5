@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sample0 - Skeleton</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<link rel="stylesheet" href="themes/reef_life_theme.min.css" />
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>	
+		<link rel="stylesheet" type="text/css" href="page.css"/> 
+		<script>
+			function adopt(){
+				var name = document.getElementById("name").value; 
+				if (name == ""){
+					alert("Please enter the name");
+				}
+				else{
+					localStorage.setItem("oysterName", name);
+					window.location.href=('index.html');
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+	<div data-role="page" data-theme="a">
+		<div data-role="header">
+			<h1>Name Your Oyster</h1>
+		</div>
+		
+		<label for="name"></label>
+		<input type="text" name="name" id="name"/>
+		
+		<div data-role="header">
+			<h1>Pick an Age</h1>
+		</div>
+		<center><div data-role="controlgroup" data-mini="true"data-type="horizontal">
+							<a href="#" data-role="button" onClick="adopt()">Infant</a> 
+							<a href="#" data-role="button" onClick="adopt()">6 Months</a> 
+							<a href="#" data-role="button" onClick="adopt()">1 Year</a> 
+							<a href="#" data-role="button" onClick="adopt()">3 Years</a> 
+				</div></center>
+	</div> 
+	</body>
+</html>

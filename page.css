@@ -1,0 +1,63 @@
+#oyster{
+border-style:double; 
+border-width:5px; 
+border-color:black; 
+width: 40%; 
+float: left;
+height:170px;
+}
+
+#oysterInfo{
+border-style:double; 
+border-width:5px; 
+border-color:black; 
+width: 40%; 
+float: right;
+height:170px;
+}
+
+#map{
+width:75%; 
+}
+
+li{
+color:white; 
+}
+
+#hey{
+font-size: 15px;
+color: white;
+}
+
+.test{
+width:1% !important;
+}
+#leftbutton {
+	float: left;
+}
+#centerbutton {
+	float: center;
+}
+#rightbutton {
+	float: right;
+}
+#seafeed {
+white-space: normal;
+}
+
+#pic{
+padding-left:5%;
+padding-right:5%;
+}
+
+#sam{
+color:white; 
+}
+#go {
+font-size: 15px;
+}
+#checkbox {
+	
+}
+
+

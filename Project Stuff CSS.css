@@ -1,0 +1,20 @@
+h3 {color:black;}
+#oyster {border-bottom:2px solid black}
+table {border:2px solid black;}
+div {clear:both}
+#food {width=10px;
+	   height=10px;}
+/*.ui-icon-fas {
+	background-image: url("fas.png");
+	background-size: 18px 18px
+	
+}*/  
+td {border:2px solid black}
+.pin{
+position:relative;
+top:59px;
+left:181px;
+}
+.table {
+	border-color: #CCCCCC;
+}
