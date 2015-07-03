@@ -10,54 +10,39 @@
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>	
 		<link rel="stylesheet" type="text/css" href="page.css"/> 
 		<script>
-		function startup(){
-			var name=localStorage.getItem("oysterName");
-			document.getElementById("hey").innerHTML = name; 
-		}
+		
+			function adopt(age){
+				var name = document.getElementById("name").value; 
+				if (name == ""){
+					alert("Please enter the name");
+				}
+				else{
+					localStorage.setItem("oysterName", name);
+					localStorage.setItem("oysterAge", age);
+					window.location.href=('home.html');
+				}
+			}
 		</script>
 	</head>
 	
-	<body onload="startup()">
-		<div data-role="page" data-theme="a">
-			
-			<div data-role="header">
-				<h1>Reef Life</h1>
-			</div>
-			
-			<div data-role="content" >
-				<div id = "oyster">
-					<center>
-					<p id="hey">name</p>
-					<a href="//E:Reef Life Stuff//Reef Life//profile.html"><img id="pic" src="images/oystermed.png" width="90%" /></a> </center>
-						</br>
-				</div>
-				
-				<div id = "oysterInfo">
-					<center><div data-role="controlgroup" data-mini="true"data-type="horizontal">
-								<a href="#" data-role="button">Age: 6 months</a> 						
-							</div>
-							<img id = "map" src="images/map_small.png"/>
-							<h4 id="sam">Sam's Bar Reef</h4>
-					</center>
-				</div>
-			</div>
-			<div data-role="header">
-				<h1>Sea Feed</h1>
-			</div>
-			
-			<ul  data-role="listview">
-				<li data-icon="false"><a id="seafeed" href="#">Current Ocean Temperature- 65 degrees Fahrenheit</a></li>
-				<li data-icon="false"><a id="seafeed" href="#">Sally Shell(Sarah's Oyster) just ate Golden Plankton!</a></li>
-				<li data-icon="false"><a id="seafeed" href="#">Did you know... One oyster can filter 50 gallons of water per day</a></li>
-				<li data-icon="false"><a id="seafeed" href="#">Check out Spike's (Buffy's Oyster) New Shades!</a></li>
-				<li data-icon="false"><a id="seafeed" href="#">Nitrogen levels in the reef- 42%</a></li>
-				<li data-icon="false"><a id="seafeed" href="#">Did you know...The Billion Oyster Project has restored 1.05 acres of oyster reef area</a></li>
-				<li data-icon="false"><a id="seafeed" href="#">Sam's Bar is having a special on shellfish today!</a></li>
-				<li data-icon="false"><a id="seafeed" href="#">Johnny Oyster(Your Oyster) just grew!</a></li>
-			</ul>
-			
-		
-		
+	<body onload = "startup()">
+	<div data-role="page" data-theme="a">
+		<div data-role="header">
+			<h1>Name Your Oyster</h1>
 		</div>
+		
+		<label for="name"></label>
+		<input type="text" name="name" id="name"/>
+		
+		<div data-role="header">
+			<h1>Pick an Age</h1>
+		</div>
+		<center><div data-role="controlgroup" data-mini="true"data-type="horizontal">
+							<a href="#" data-role="button" onClick="adopt('Infant')">Infant</a> 
+							<a href="#" data-role="button" onClick="adopt('6 Months')">6 Months</a> 
+							<a href="#" data-role="button" onClick="adopt('1 Year')">1 Year</a> 
+							<a href="#" data-role="button" onClick="adopt('3 Years')">3 Years</a> 
+				</div></center>
+	</div> 
 	</body>
 </html>

@@ -5,15 +5,13 @@
 	<title>Reef Life</title>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="Project Stuff CSS.css" type="text/css"/>
+	<link rel="stylesheet" href="profile.css" type="text/css"/>
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 		<link rel="stylesheet" href="themes/reef_life_theme.min.css" />
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-		<script type="text/javascript" charset="utf-8">
-			document.getElementById("hey").innerHTML= localStorage.getItem("oysterName") +":6 months";
-			
+		<script type="text/javascript">
 			function check(name){
 				var prev = localStorage.getItem(name);
 				if(prev == "1"){
@@ -23,7 +21,6 @@
 					if(confirm("Are you sure you want to purchase " + name +"?")){
 						alert("Congratulations! Purchase sucessful! Remember, all proceeds go towards the Billion Oyster Project.");
 						localStorage.setItem(name, "1");
-						document.getElementById(name).data-icon = "check";
 					}
 				}
 			}
@@ -34,7 +31,10 @@
 			}
 			function startup(){
 				var name=localStorage.getItem("oysterName");
-				document.getElementById("oyster").innerHTML = name + ": 6 months"; 
+				document.getElementById("insertname").innerHTML = name + ": " + localStorage.getItem("oysterAge"); 
+			}
+			function navigate(){
+				window.location.href=('home.html');
 			}
 		</script>
 		
@@ -49,10 +49,10 @@
 			<center>
 				<table>
 					<tr>
-						<td><center><h2 id="oyster">Johnny: 6 months</h2></center></td>
+						<td><center><h2 id="insertname">Johnny: 6 months</h2></center></td>
 					</tr>
 					<tr>
-						<td><center><a href="//E:Reef Life Stuff//Reef Life//index.html"><img src="images/oysterplain2.png"/></a></center></td>
+						<td><center><img src="images/oysterplain2.png" onClick="navigate()"/></center></td>
 						
 					</tr>
 					
@@ -76,7 +76,7 @@
 					</tr>
 				</table>
 				<center><div class="fixed_stuff" data-role="collapsible-set">
-					<div data-role="collapsible" data-collapsed="false">
+					<div data-role="collapsible">
 						<h3>Food</h3>
 						<table class="table">
 							<tr>
@@ -102,7 +102,7 @@
 						</table>
 								
 					</div>
-					<div data-role="collapsible" data-collapsed="false">
+					<div data-role="collapsible">
 						<h3>Clothing</h3>
 							<table class="table">
 							<tr>
@@ -132,7 +132,7 @@
 							</tr>
 						</table>
 					</div>
-					<div data-role="collapsible" data-collapsed="false">
+					<div data-role="collapsible" >
 						<h3>Decorations</h3>
 						<table class="table">
 							<tr>
